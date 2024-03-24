@@ -1,6 +1,9 @@
-# Install the puppet-lint package
-package { 'puppet-lint':
-  ensure   => '2.5.0',
-  provider => 'gem',
-}
+# create_school_file.pp
 
+file { '/tmp/school':
+  ensure  => 'file',
+  mode    => '0744',
+  owner   => 'www-data',
+  group   => 'www-data',
+  content => 'I love Puppet',
+}
